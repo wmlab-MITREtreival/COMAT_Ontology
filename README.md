@@ -39,6 +39,6 @@ This script processes an input document, extracts query nodes, and queries the C
 - **Description**: Infers attack patterns based on verb-object pairs, group, and software information.
 - **Returns**: A dictionary with inferred attack techniques.
 ```bash
-python predict.py
+python attack_pattern_inference.py
 ```
 
