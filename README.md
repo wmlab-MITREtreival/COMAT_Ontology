@@ -4,6 +4,12 @@
 ## Overview
 COMAT is a cybersecurity framework designed for inferring attack patterns using natural language processing techniques. This repository contains tools and models for embedding analysis, attack pattern inference, and evaluation.
 
+## Model Downloads
+Download the [SRL model and relevant ontology files](https://drive.google.com/drive/folders/10HotHLs_h_Oy4IJbbC_Ln26UG7NJuZrm?usp=drive_link).
+After downloading, please ensure to place the models in the same directory as `main.py`.
+This ensures the application can correctly locate and utilize the models.
+
+
 ## Installation
 To run this project, make sure you have the following dependencies installed:
 - Python 3.x
