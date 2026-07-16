@@ -354,7 +354,7 @@ class Ontology:
         return tech2ta_dict
 
 if __name__=='__main__':
-    greeter = Ontology("bolt://140.115.54.74:7687", "neo4j", "wmlab")
+    greeter = Ontology("bolt://localhost:10096", "neo4j", "wmlab")
     dict = greeter.get_technique2tactic_dict()
     
     for k, v in dict.items():
