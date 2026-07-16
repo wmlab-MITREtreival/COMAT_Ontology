@@ -52,7 +52,7 @@ def test_preprocess(text):
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', return_dict=False)
     model = BERTClass(model_config)
     MAX_LEN = 512
-    model.load_state_dict(torch.load("bert_binary.pt", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("bert_binary_cy.pt", map_location=torch.device('cpu')))
     model.to('cpu')
     model.eval()
     
