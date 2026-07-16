@@ -189,7 +189,7 @@ def vo_similarity(v_verb, v_obj, v_in_verb, v_in_obj):
         return False
     return v_score*0.6 + o_score*0.4
 # 指定要儲存的CSV檔案路徑
-csv_file_path = "/root/COMAT/infer_ontology/output.csv"
+csv_file_path = "output.csv"
 def mapping(local_vo_pair_lst, v_in_verb, v_in_obj, match_vo_pair):
     for i,row in local_vo_pair_lst.iterrows():
         local_match=[]
