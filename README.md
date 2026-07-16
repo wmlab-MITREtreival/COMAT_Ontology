@@ -9,6 +9,43 @@ Download the [Structured prediction SRL model, binary bert, and relevant ontolog
 After downloading, please ensure to place the models in the same directory as `main.py`.
 This ensures the application can correctly locate and utilize the models.
 
+## Database Setup (Neo4j Ontology)
+
+The inference pipeline queries a **Neo4j** graph database that holds the COMAT
+ontology (Groups, Software, Techniques, Tactics, and Verb-Object attack
+patterns). You must restore this database before running `main.py`,
+`predict.py`, or `attack_pattern_inference.py`.
+
+### 1. Download the ontology dump
+Download `ontology_backup_20260716.dump` from the
+[model & data folder](https://drive.google.com/drive/folders/1GMIK-fjkr9awD6R1DE6hl8A9uu2e8139?usp=drive_link)
+(the same Drive folder as the models above).
+
+### 2. Restore it into Neo4j
+Requires **Neo4j 4.4.x (Community Edition)**. With the Neo4j server stopped:
+
+```bash
+neo4j-admin load --from=ontology_backup_20260716.dump --database=ontology --force
+```
+
+Then set the default database in `conf/neo4j.conf`:
+Start Neo4j and set a password on first login.
+
+### 3. Configure the connection
+Edit `data_source/neo4j_info.json` with your Neo4j address and credentials:
+
+```json
+{
+    "url": "bolt://localhost:7687",
+    "account": "neo4j",
+    "password": "your_password"
+}
+```
+
+All scripts read this file to connect, so this is the only place you need to
+set the database address.
+
+
 
 ## Installation
 To run this project, make sure you have the following dependencies installed:
