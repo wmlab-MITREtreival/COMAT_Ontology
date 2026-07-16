@@ -116,7 +116,11 @@ must_ttp_dict = {
     't1561' : ['Master Boot Record', 'MBR']
 }
 
-greeter = Ontology("bolt://localhost:10096", "neo4j", "wmlab")
+import json
+
+with open('data_source/neo4j_info.json') as f:
+    _neo4j_info = json.load(f)
+greeter = Ontology(_neo4j_info["url"], _neo4j_info["account"], _neo4j_info["password"])
 tech_id_name_dict = greeter.get_all_tech_id_name()
 greeter.close()
 
