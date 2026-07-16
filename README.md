@@ -29,6 +29,11 @@ neo4j-admin load --from=ontology_backup_20260716.dump --database=ontology --forc
 ```
 
 Then set the default database in `conf/neo4j.conf`:
+
+```
+dbms.default_database=ontology
+```
+
 Start Neo4j and set a password on first login.
 
 ### 3. Configure the connection
