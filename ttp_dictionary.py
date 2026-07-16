@@ -116,7 +116,7 @@ must_ttp_dict = {
     't1561' : ['Master Boot Record', 'MBR']
 }
 
-greeter = Ontology("bolt://140.115.54.90:10096", "neo4j", "wmlab")
+greeter = Ontology("bolt://localhost:10096", "neo4j", "wmlab")
 tech_id_name_dict = greeter.get_all_tech_id_name()
 greeter.close()
 
